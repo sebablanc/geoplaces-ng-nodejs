@@ -1,0 +1,25 @@
+.item-img{
+    max-width: 10rem;
+    min-height: 10rem;
+    max-height: 10rem;
+    top: 0;
+    border-radius: 20px 20px 0 0;
+    min-width: 10rem;
+    width: 10rem;
+    height: 10rem;
+}
+
+.item-data{
+    height: 47%;
+    width: 100%;
+    .item-name{
+        font-size: 25px;
+        margin: 5px 0 15px 0;
+    }
+    .item-dir,
+    .item-tel{
+        text-align: left;
+        margin-bottom: 5px;
+        padding: 0 10px;
+    }
+}

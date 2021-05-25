@@ -1,0 +1,13 @@
+<button class="button card">
+    <div class="button-content card-content">
+        <img class="item-img" src="{{'../../../assets/'+item.nombre.toLowerCase().replace(' ', '_')+'.png'}}" alt="">
+        <div class="item-data">
+            <div class="item-name bolder-text">{{ item.nombre }}</div>
+            <div class="item-dir">
+                <span class="bolder-text">Dir.: </span>{{ item.direccion }}</div>
+            <div class="item-tel">
+                <span class="bolder-text">Tel.:</span> {{ item.telefono }}
+            </div>
+        </div>
+    </div>
+</button>

@@ -1,0 +1,25 @@
+<form *ngIf="form" class="mi-form" [formGroup]="form">
+
+    <!-- N O M B R E -->
+    <app-input-form [config]="nombreConfig"></app-input-form>
+
+    <!-- D I R E C C I O N -->
+    <app-input-form [config]="direccionConfig"></app-input-form>
+
+    <!-- T E L E F O N O -->
+    <app-input-form [config]="telefonoConfig"></app-input-form>
+
+    <!-- L A T I T U D -->
+    <app-input-form [config]="latitudConfig"></app-input-form>
+
+    <!-- L O N G I T U D -->
+    <app-input-form [config]="longitudConfig"></app-input-form>
+
+    <div class="botonera">
+        <button mat-raised-button class="left-button" (click)="emitNull()">
+            <fa-icon class="faIcon" [icon]="['far', 'hand-point-left']"></fa-icon>Volver
+        </button>
+        <button mat-raised-button class="right-button" (click)="emitData()">Guardar</button>
+    </div>
+</form>
+

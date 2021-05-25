@@ -1,0 +1,10 @@
+<app-layout>
+    <h1 class="page-title">Centros de Atención de Salud</h1>
+    <div class="page-content">
+        <div class="page-grid">
+            <app-add-card (addCardClicked)="addClicked()"></app-add-card>
+            <app-item-card *ngFor="let cae of caesList" [item]="cae"></app-item-card>
+        </div>
+    </div>
+</app-layout>
+
