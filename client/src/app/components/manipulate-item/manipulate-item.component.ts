@@ -29,8 +29,6 @@ export class ManipulateItemComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-    console.log(this.categoria);
-    
     this.form.controls['categoria'].setValue(this.categoria);
   }
 
@@ -48,6 +46,14 @@ export class ManipulateItemComponent implements OnInit {
 
   back(info: any){
     this.infoBack.emit(info);
+  }
+
+  resetForm(){
+    this.form.controls.nombre.setValue(null);
+    this.form.controls.direccion.setValue(null);
+    this.form.controls.telefono.setValue(null);
+    this.form.controls.latitud.setValue(null);
+    this.form.controls.longitud.setValue(null);
   }
 
 }

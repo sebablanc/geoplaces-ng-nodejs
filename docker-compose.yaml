@@ -2,16 +2,36 @@ version: '3.9'
 
 services: 
     client:
+        build:
+          context: ./client/.
+          dockerfile: Dockerfile
         image: geoplaces-client
+        volumes:
+          - ./client/:/client
+          - ./client/dist/:/client/dist
         ports: 
-            - 4200:4200
+            - "4200:80"
 
     api:
+        build:
+          context: ./server-node/.
+          dockerfile: Dockerfile
         image: geoplaces-server
+        volumes:
+          - ./server-node/.:/api
+          - /api/node_modules
         ports: 
-            - 5000:5000
+            - "8000:8000"
+        links: 
+            - db:db
 
     db:
-        image: redis
+        image: redis:6.0.1-alpine
+        command: redis-server
         ports:
-            - 6379:6379
+          - "6379:6379"
+        volumes:
+          - $PWD/redis-data:/var/lib/redis
+          - $PWD/redis.conf:/usr/local/etc/redis/redis.conf
+        environment:
+          - REDIS_REPLICATION_MODE=master

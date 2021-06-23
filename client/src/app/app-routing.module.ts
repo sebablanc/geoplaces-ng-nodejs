@@ -10,6 +10,7 @@ import { ManipulateUniversidadComponent } from './pages/manipulate-universidad/m
 import { ManipulateFarmaciaComponent } from './pages/manipulate-farmacia/manipulate-farmacia.component';
 import { ManipulateCaeComponent } from './pages/manipulate-cae/manipulate-cae.component';
 import { ManipulateSupermercadoComponent } from './pages/manipulate-supermercado/manipulate-supermercado.component';
+import { TengoCercaHomeComponent } from './pages/tengo-cerca-home/tengo-cerca-home.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'cervecerias-home', pathMatch: 'full'},
@@ -23,6 +24,7 @@ const routes: Routes = [
   { path: 'manipulate-cae', component: ManipulateCaeComponent },
   { path: 'supermercados-home', component: SupermercadosHomeComponent },
   { path: 'manipulate-supermercado', component: ManipulateSupermercadoComponent },
+  { path: 'tengo-cerca-home', component: TengoCercaHomeComponent },
   { path: '**', redirectTo: 'cervecerias-home'},
 ];
 

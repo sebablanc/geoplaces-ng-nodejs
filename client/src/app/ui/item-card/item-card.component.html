@@ -1,6 +1,6 @@
-<button class="button card">
-    <div class="button-content card-content">
-        <img class="item-img" src="{{'../../../assets/'+item.nombre.toLowerCase().replace(' ', '_')+'.png'}}" alt="">
+<button class="button card" [ngClass]="{'horizontal-card': horizontalStyle}">
+    <div class="card-content button-content" [ngClass]="{'horizontal-button-content': horizontalStyle}">
+        <img class="item-img" src="{{'../../../assets/'+ item.nombre.toLowerCase().split(' ').join('_') +'.png'}}" alt="">
         <div class="item-data">
             <div class="item-name bolder-text">{{ item.nombre }}</div>
             <div class="item-dir">
@@ -8,6 +8,7 @@
             <div class="item-tel">
                 <span class="bolder-text">Tel.:</span> {{ item.telefono }}
             </div>
+            <div *ngIf="showDistance" class="item-dist">Distancia: {{ item.distance | number:'1.2-2' }} Km</div>
         </div>
     </div>
 </button>

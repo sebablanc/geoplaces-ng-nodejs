@@ -29,6 +29,7 @@ import { ManipulateFarmaciaComponent } from './pages/manipulate-farmacia/manipul
 import { ManipulateCaeComponent } from './pages/manipulate-cae/manipulate-cae.component';
 import { ManipulateSupermercadoComponent } from './pages/manipulate-supermercado/manipulate-supermercado.component';
 import { ItemCardComponent } from './ui/item-card/item-card.component';
+import { TengoCercaHomeComponent } from './pages/tengo-cerca-home/tengo-cerca-home.component';
 
 @NgModule({
   declarations: [
@@ -48,7 +49,8 @@ import { ItemCardComponent } from './ui/item-card/item-card.component';
     ManipulateFarmaciaComponent,
     ManipulateCaeComponent,
     ManipulateSupermercadoComponent,
-    ItemCardComponent
+    ItemCardComponent,
+    TengoCercaHomeComponent
   ],
   imports: [
     BrowserModule,

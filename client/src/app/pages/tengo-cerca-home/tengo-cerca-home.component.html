@@ -1,0 +1,58 @@
+<app-layout>
+    <div *ngIf="tengoCercaCerveceriasLista && tengoCercaCerveceriasLista.length > 0">
+        <h1 class="page-title">Cervecerias</h1>
+            <div class="page-content">
+                <div class="page-grid page-grid-tengo-cerca">
+                    <app-item-card *ngFor="let cerveceriaCerca of tengoCercaCerveceriasLista" [item]="cerveceriaCerca" [horizontalStyle]="true" [showDistance]="true"></app-item-card>
+                </div>
+            </div>
+        </div>
+    <div *ngIf="tengoCercaUniversidadesLista && tengoCercaUniversidadesLista.length > 0">
+        <h1 class="page-title">Universidades</h1>
+        <div class="page-content">
+            <div class="page-grid page-grid-tengo-cerca">
+                <app-item-card *ngFor="let universidadCerca of tengoCercaUniversidadesLista" [item]="universidadCerca" [horizontalStyle]="true" [showDistance]="true"></app-item-card>
+            </div>
+        </div>
+    </div>
+
+    <div *ngIf="tengoCercaFarmaciasLista && tengoCercaFarmaciasLista.length > 0">
+        <h1 class="page-title">Farmacias</h1>
+        <div class="page-content">
+            <div class="page-grid page-grid-tengo-cerca">
+                <app-item-card *ngFor="let farmaciasCerca of tengoCercaFarmaciasLista" [item]="farmaciasCerca" [horizontalStyle]="true" [showDistance]="true"></app-item-card>
+            </div>
+        </div>
+    </div>
+
+    <div *ngIf="tengoCercaCaesLista && tengoCercaCaesLista.length > 0">
+        <h1 class="page-title">Centros de Atención de Salud</h1>
+        <div class="page-content">
+            <div class="page-grid page-grid-tengo-cerca">
+                <app-item-card *ngFor="let caesCerca of tengoCercaCaesLista" [item]="caesCerca" [horizontalStyle]="true" [showDistance]="true"></app-item-card>
+            </div>
+        </div>
+    </div>
+
+    <div *ngIf="tengoCercaSupermercadosLista && tengoCercaSupermercadosLista.length > 0">
+        <h1 class="page-title">Supermercados</h1>
+        <div class="page-content">
+            <div class="page-grid page-grid-tengo-cerca">
+                <app-item-card *ngFor="let supermercadosCerca of tengoCercaSupermercadosLista" [item]="supermercadosCerca" [horizontalStyle]="true" [showDistance]="true"></app-item-card>
+            </div>
+        </div>
+    </div>
+
+    <div *ngIf="tengoCercaCerveceriasLista.length <= 0 &&
+                    tengoCercaUniversidadesLista.length <= 0 &&
+                    tengoCercaFarmaciasLista.length <= 0 &&
+                    tengoCercaCaesLista.length <= 0 &&
+                    tengoCercaSupermercadosLista.length <= 0" class="nada-cerca-body">
+        <div class="not-content">
+            <h1 class="page-title">¡Lo lamentamos! No hay nada cerca</h1>
+            <div class="page-content">
+                No encontramos nada para mostrarte cercano a {{ kms<=1 ? (kms | number:'1.2-2' ) +' Kilómetro ' : 'los ' + (kms | number:'1.2-2' ) + ' Kilómetros' }} de tu posición actual.
+            </div>
+        </div>
+    </div>
+</app-layout>

@@ -1,7 +1,10 @@
-FROM node:16-alpine3.11
-
-WORKDIR /geoplaces-client
+FROM node:14-alpine3.11 AS build
+WORKDIR /client
+COPY package.json package-lock.json ./
+RUN npm install
 COPY . .
-RUN npm install -g @angular/cli && npm install
+RUN npm run build
 
-CMD ["ng", "serve"]
+FROM nginx:1.17.1-alpine
+COPY nginx.conf /etc/nginx/nginx.conf
+COPY --from=build /client/dist/geoplaces /usr/share/nginx/html

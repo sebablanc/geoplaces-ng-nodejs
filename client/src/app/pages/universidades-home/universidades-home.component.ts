@@ -25,8 +25,6 @@ export class UniversidadesHomeComponent implements OnInit {
     let resp = await this.itemsSrv.getItemsListByCategory('universidades');
     this.universidadesList = [];
     if(resp && resp.exito && resp.lugares && resp.lugares.length >= 0){
-      console.log(this.universidadesList);
-      
       this.universidadesList = resp.lugares;
     } else {
       alert(resp.messages);

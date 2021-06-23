@@ -7,7 +7,9 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class ItemCardComponent implements OnInit {
   @Input() item: any;
-
+  @Input() horizontalStyle: boolean = false;
+  @Input() showDistance: boolean = false;
+  
   constructor() { }
 
   ngOnInit(): void {

@@ -14,10 +14,10 @@ export class FarmaciasHomeComponent implements OnInit {
   constructor(private routingSrv: RoutingService, private itemsSrv: ItemsService) { }
 
   ngOnInit(): void {
+    this.getFarmaciasList();
   }
 
   addClicked(){
-    console.log('Función del click');
     this.routingSrv.goTo(PAGES.MANIPULATE_FARMACIAS);
   }
 

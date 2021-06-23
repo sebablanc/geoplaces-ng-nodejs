@@ -12,7 +12,8 @@ export enum PAGES {
   CAES_HOME='caes-home',
   MANIPULATE_CAES='manipulate-cae',
   SUPERMERCADOS_HOME='supermercados-home',
-  MANIPULATE_SUPERMERCADOS='manipulate-supermercado'
+  MANIPULATE_SUPERMERCADOS='manipulate-supermercado',
+  TENGO_CERCA_HOME='tengo-cerca-home'
 }
 
 @Injectable({
